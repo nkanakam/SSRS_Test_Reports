@@ -24,4 +24,4 @@ jobs:
           body: Please find your PDF report attached.
           to: nkanakam@launchcg.com
           from: nkanakam@launchcg.com
-          attachments: path/to/your-pdf-file.pdf  # Path to your pre-existing PDF file in the repository
+          attachments: Unit Test Status.pdf  # Path to your pre-existing PDF file in the repository
