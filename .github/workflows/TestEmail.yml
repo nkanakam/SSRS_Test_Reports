@@ -2,7 +2,7 @@ name: Send PDF Report
 
 on:
   schedule:
-    - cron: '25 21 * * *'  # Runs every day at midnight
+    - cron: '25 21 * * *'  # Runs every day
 
 jobs:
   send-report:
@@ -31,8 +31,8 @@ jobs:
         with:
           server_address: smtp.office365.com
           server_port: 587
-          username: ${{ secrets.nkanakam@launchcg.com }}
-          password: ${{ secrets.Nk@p@ssw0rd9900 }}
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
           subject: Your PDF Report
           body: Please find your PDF report attached.
           to: nkanakam@launchcg.com
