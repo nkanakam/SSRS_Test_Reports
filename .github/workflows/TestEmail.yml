@@ -2,7 +2,7 @@ name: Send PDF Report
 
 on:
   schedule:
-    - cron: '40 21 * * *'  # Runs every day at midnight
+    - cron: '0 22 * * *'  # Runs every day at midnight
   workflow_dispatch:    # Allows manual trigger
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
       - name: Send Email with PDF Attachment
         uses: dawidd6/action-send-mail@v2
         with:
-          server_address: smtp.office365.com
+          server_address: smtp.gmail.com
           server_port: 587
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
