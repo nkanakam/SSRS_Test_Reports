@@ -2,7 +2,7 @@ name: Send PDF Report
 
 on:
   schedule:
-    - cron: '15 21 * * *'  # Runs every day at midnight
+    - cron: '25 21 * * *'  # Runs every day at midnight
 
 jobs:
   send-report:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Save Report as PDF
         run: |
-          pandoc report.md -o report.pdf
+          pandoc report.md -o Unit Test Status.pdf
 
       - name: Send Email with PDF Attachment
         uses: dawidd6/action-send-mail@v2
