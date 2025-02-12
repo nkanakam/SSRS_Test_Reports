@@ -37,4 +37,4 @@ jobs:
           body: Please find your PDF report attached.
           to: nkanakam@launchcg.com
           from: nkanakam@launchcg.com
-          attachments: report.pdf
+          attachments: Unit Test Status.pdf
