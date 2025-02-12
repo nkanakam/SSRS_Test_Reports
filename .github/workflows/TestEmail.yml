@@ -2,7 +2,7 @@ name: Send PDF Report
 
 on:
   schedule:
-    - cron: '30 21 * * *'  # Runs every day
+    - cron: '40 21 * * *'  # Runs every day at midnight
   workflow_dispatch:    # Allows manual trigger
 
 jobs:
@@ -12,20 +12,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Install Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex
-
-      - name: Generate Report
-        run: |
-          echo "# Report Title" > report.md
-          echo "This is the content of the report." >> report.md
-
-      - name: Save Report as PDF
-        run: |
-          pandoc report.md -o Unit Test Status.pdf
 
       - name: Send Email with PDF Attachment
         uses: dawidd6/action-send-mail@v2
@@ -38,4 +24,4 @@ jobs:
           body: Please find your PDF report attached.
           to: nkanakam@launchcg.com
           from: nkanakam@launchcg.com
-          attachments: Unit Test Status.pdf
+          attachments: path/to/your-pdf-file.pdf  # Path to your pre-existing PDF file in the repository
